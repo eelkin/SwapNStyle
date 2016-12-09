@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IPm-wg-T2e">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Swap N' Style-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwapNStyle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,199 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OAs-Ti-OHS">
+                                <rect key="frame" x="75" y="83" width="225" height="565"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="8Wd-Bd-pzb">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="182.5"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8Wd-Bd-pzb" secondAttribute="height" multiplier="225:182" id="OPx-zz-OUY"/>
+                                            <constraint firstAttribute="height" constant="182.5" id="f2t-MV-JVL"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="noi-qx-vDh" appends="YES" id="OgS-kf-vEf"/>
+                                            <outletCollection property="gestureRecognizers" destination="apI-Xm-o9j" appends="YES" id="FVJ-0b-QQw"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-J7-Crg" userLabel="Pants Image View">
+                                        <rect key="frame" x="0.0" y="192.5" width="225" height="182.5"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ECA-J7-Crg" secondAttribute="height" multiplier="225:182" id="JcV-aM-Zaz"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="QAG-me-Znj" appends="YES" id="URj-GM-uEj"/>
+                                            <outletCollection property="gestureRecognizers" destination="yCo-st-C8w" appends="YES" id="6FY-NZ-L1J"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="iXR-Nm-Iz5" userLabel="Shoes Image View">
+                                        <rect key="frame" x="0.0" y="385" width="225" height="180"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="Fsw-FQ-8uN"/>
+                                            <constraint firstAttribute="width" secondItem="iXR-Nm-Iz5" secondAttribute="height" multiplier="5:4" id="SFH-Bu-A3k"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="azh-tV-WXL" appends="YES" id="pfY-Zu-8wA"/>
+                                            <outletCollection property="gestureRecognizers" destination="pPm-Vl-ohi" appends="YES" id="0Hf-4b-BNv"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OAs-Ti-OHS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="5Wt-Zm-m3n"/>
+                            <constraint firstItem="OAs-Ti-OHS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aDE-lO-orp"/>
+                            <constraint firstItem="OAs-Ti-OHS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="59" id="iMQ-Wf-BXx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OAs-Ti-OHS" secondAttribute="bottom" constant="19" id="k5O-8Z-3VK"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Swap N' Style" id="PW5-Bk-7yD">
+                        <barButtonItem key="rightBarButtonItem" title="Add Item" id="Cfu-Oz-RfQ" userLabel="Add Item">
+                            <connections>
+                                <segue destination="KPp-RD-B2W" kind="show" identifier="showSecondViewController" id="Kr0-vJ-Wzk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pantsImageView" destination="ECA-J7-Crg" id="Awx-4S-1Sg"/>
+                        <outlet property="shirtImageView" destination="8Wd-Bd-pzb" id="zO9-c0-ASH"/>
+                        <outlet property="shoesImageView" destination="iXR-Nm-Iz5" id="1SS-Wa-u1T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="noi-qx-vDh" userLabel="Swipe Right Shirt">
+                    <connections>
+                        <action selector="swipeImageRight:" destination="BYZ-38-t0r" id="05a-uB-bdD"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="QAG-me-Znj" userLabel="Swipe Right Pants">
+                    <connections>
+                        <action selector="swipeImageRight:" destination="BYZ-38-t0r" id="rqX-Cr-bfl"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="azh-tV-WXL" userLabel="Swipe Right Shoes">
+                    <connections>
+                        <action selector="swipeImageRight:" destination="BYZ-38-t0r" id="g01-9V-65O"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="apI-Xm-o9j" userLabel="Swipe Left Shirt">
+                    <connections>
+                        <action selector="swipeImageLeft:" destination="BYZ-38-t0r" id="pyA-NW-IYh"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="yCo-st-C8w" userLabel="Swipe Left Pants">
+                    <connections>
+                        <action selector="swipeImageLeft:" destination="BYZ-38-t0r" id="Mhu-vk-NcM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="pPm-Vl-ohi" userLabel="Swipe Left Shoes">
+                    <connections>
+                        <action selector="swipeImageLeft:" destination="BYZ-38-t0r" id="VVB-0Y-7mb"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="879.20000000000005" y="138.98050974512745"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="3Yd-ka-RLD">
+            <objects>
+                <viewController id="KPp-RD-B2W" customClass="SecondViewController" customModule="SwapNStyle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ivs-FU-LZj"/>
+                        <viewControllerLayoutGuide type="bottom" id="NGJ-Ln-KGC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P6U-11-2Gg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-c3-NY5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ube-JM-SgR"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igr-Mw-uGe">
+                                <rect key="frame" x="16" y="520" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Take Picture"/>
+                                <connections>
+                                    <action selector="takePhotoForImage:" destination="KPp-RD-B2W" eventType="touchUpInside" id="LUF-g8-z5f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9M-iQ-mvF">
+                                <rect key="frame" x="16" y="576" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addItemToVCImageView:" destination="KPp-RD-B2W" eventType="touchUpInside" id="6ko-h5-YN8"/>
+                                    <segue destination="upm-ID-hgw" kind="unwind" unwindAction="unwindfromSecondView:" id="2bI-Hg-Kld"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-K5-0Sr">
+                                <rect key="frame" x="25" y="171" width="325" height="325"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8DW-rX-FBv" appends="YES" id="QFb-iD-35j"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="b9M-iQ-mvF" firstAttribute="leading" secondItem="P6U-11-2Gg" secondAttribute="leadingMargin" id="6qj-9M-DWt"/>
+                            <constraint firstItem="b3z-c3-NY5" firstAttribute="leading" secondItem="P6U-11-2Gg" secondAttribute="leading" id="Bph-1o-e70"/>
+                            <constraint firstItem="Igr-Mw-uGe" firstAttribute="leading" secondItem="P6U-11-2Gg" secondAttribute="leadingMargin" id="FPp-4x-d5W"/>
+                            <constraint firstItem="NGJ-Ln-KGC" firstAttribute="top" secondItem="b9M-iQ-mvF" secondAttribute="bottom" constant="50" id="VAc-Hh-1uw"/>
+                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="centerX" secondItem="Igr-Mw-uGe" secondAttribute="centerX" id="XaE-E6-O2x"/>
+                            <constraint firstItem="b3z-c3-NY5" firstAttribute="centerX" secondItem="P6U-11-2Gg" secondAttribute="centerX" id="ZSV-B4-Dlm"/>
+                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="leading" secondItem="P6U-11-2Gg" secondAttribute="leadingMargin" constant="9" id="akd-QB-JDA"/>
+                            <constraint firstItem="b9M-iQ-mvF" firstAttribute="top" secondItem="Igr-Mw-uGe" secondAttribute="bottom" constant="15" id="asS-nl-pNb"/>
+                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="centerY" secondItem="P6U-11-2Gg" secondAttribute="centerY" id="fyC-1m-lHq"/>
+                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="top" secondItem="b3z-c3-NY5" secondAttribute="bottom" constant="7" id="hfP-VI-jec"/>
+                            <constraint firstAttribute="trailing" secondItem="b3z-c3-NY5" secondAttribute="trailing" id="hhA-23-cKg"/>
+                            <constraint firstItem="b3z-c3-NY5" firstAttribute="top" secondItem="Ivs-FU-LZj" secondAttribute="bottom" id="ixN-jy-ruW"/>
+                            <constraint firstItem="Igr-Mw-uGe" firstAttribute="trailing" secondItem="P6U-11-2Gg" secondAttribute="trailingMargin" id="yoY-9J-ydJ"/>
+                            <constraint firstItem="b9M-iQ-mvF" firstAttribute="trailing" secondItem="P6U-11-2Gg" secondAttribute="trailingMargin" id="z4e-pB-U7T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="dV0-K5-0Sr" id="ADq-c7-TSb"/>
+                        <outlet property="picker" destination="b3z-c3-NY5" id="86F-qm-zLd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQT-gd-wvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="upm-ID-hgw" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="8DW-rX-FBv">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="KPp-RD-B2W" id="Lq7-NH-QW6"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1639.2" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l0h-Fa-gme">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IPm-wg-T2e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9zG-Bg-sJY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vE1-I2-feK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2s-Zq-Buh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="540" height="540"/>
+    </resources>
 </document>
