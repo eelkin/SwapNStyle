@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var shirts: [String] = []
     var pants: [String] = []
     var shoes: [String] = []
+    // presentation purposes: default photos to fill arrays
     
     // counter for arrays
     var shirtsI: Int = 0
@@ -98,14 +99,6 @@ class ViewController: UIViewController {
             }
         }
         
-        /*
-        //test
-        if imageView.image == #imageLiteral(resourceName: "defaultPhoto") {
-            imageView.image = #imageLiteral(resourceName: "sprite")
-        } else {
-            imageView.image = #imageLiteral(resourceName: "defaultPhoto")
-        }
-        */
     }
     
     @IBAction func swipeImageLeft(_ sender: UISwipeGestureRecognizer) {
@@ -145,21 +138,12 @@ class ViewController: UIViewController {
             }
         }
         
-        /*
-        //test
-        if imageView.image == #imageLiteral(resourceName: "defaultPhoto") {
-            imageView.image = #imageLiteral(resourceName: "sprite")
-        } else {
-            imageView.image = #imageLiteral(resourceName: "defaultPhoto")
-        }
-        */
     }
     
     // MARK: Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSecondViewController" {
             let secondViewController = segue.destination as! SecondViewController
-
         }
     }
     

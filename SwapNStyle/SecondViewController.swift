@@ -14,6 +14,11 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var photoImageView: UIImageView!
     
     var pickerData: [String] = [String]()
+    // for simulator presentation only
+    let defaultShirts: [UIImage] = [#imageLiteral(resourceName: "shirt"), #imageLiteral(resourceName: "shirt2"), #imageLiteral(resourceName: "shirt3"), #imageLiteral(resourceName: "shirt4")]
+    let defaultPants: [UIImage] = [#imageLiteral(resourceName: "pants"), #imageLiteral(resourceName: "pants2"), #imageLiteral(resourceName: "pants3"), #imageLiteral(resourceName: "pants4")]
+    let defaultShoes: [UIImage] = [#imageLiteral(resourceName: "shoes"), #imageLiteral(resourceName: "shoes2"), #imageLiteral(resourceName: "shoes3"), #imageLiteral(resourceName: "shoes4")]
+    
     
     //clothing item is created
     var clothingItem: Item = Item(id: 1, itemType: "Shirt", itemPicture: "")
@@ -90,15 +95,18 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             present(imagePickerController,animated: true,completion: nil)
         } else {
-            /*
+            
+            // default photo
+            let rand = Int(arc4random_uniform(4) + 1)
+            
             if clothingItem.itemType == "Shirt" {
-                photoImageView.image = #imageLiteral(resourceName: "shirt")
+                photoImageView.image = defaultShirts[rand]
             } else if clothingItem.itemType == "Pants" {
-                photoImageView.image = #imageLiteral(resourceName: "pants")
+                photoImageView.image = defaultPants[rand]
             } else {
-                photoImageView.image = #imageLiteral(resourceName: "shoes")
+                photoImageView.image = defaultShoes[rand]
             }
-            */
+            
             noCamera()
         }
     }
