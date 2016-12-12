@@ -19,7 +19,6 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     let defaultPants: [UIImage] = [#imageLiteral(resourceName: "pants"), #imageLiteral(resourceName: "pants2"), #imageLiteral(resourceName: "pants3"), #imageLiteral(resourceName: "pants4")]
     let defaultShoes: [UIImage] = [#imageLiteral(resourceName: "shoes"), #imageLiteral(resourceName: "shoes2"), #imageLiteral(resourceName: "shoes3"), #imageLiteral(resourceName: "shoes4")]
     
-    
     //clothing item is created
     var clothingItem: Item = Item(id: 1, itemType: "Shirt", itemPicture: "")
     
@@ -83,6 +82,7 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         present(imagePickerController, animated: true, completion: nil)
     }
+    
     // source: https://makeapppie.com/2016/06/28/how-to-use-uiimagepickercontroller-for-a-camera-and-photo-library-in-swift-3-0/
     @IBAction func takePhotoForImage(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -90,6 +90,7 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             imagePickerController.allowsEditing = false
             imagePickerController.sourceType = UIImagePickerControllerSourceType.camera
+            imagePickerController.delegate = self
             imagePickerController.cameraCaptureMode = .photo
             imagePickerController.modalPresentationStyle = .fullScreen
             
@@ -138,7 +139,6 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         clothingItem.itemPicture = clothingItem.itemPicture.replacingOccurrences(of: "+", with: " ")
         clothingItem.itemPicture = clothingItem.itemPicture.replacingOccurrences(of: " ", with: "")
         
-        
         // USE FOR SAVING IMAGE
         // get a path to the Documents directory
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -152,24 +152,13 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
             }
         }
         
-        
         //adding to database
         if let id = ItemDB.instance.add(item: clothingItem) {
             clothingItem.id = id
             print("added to database")
         }
         
-        
-        //testing
-        let clothingItems = ItemDB.instance.getClothes()
-        for item in clothingItems {
-            print(item.id!)
-            print(item.itemType)
-            print(item.itemPicture)
-        }
-        
-        
-        //goes back to first page of app UNCOMMENT BELOW
+        //goes back to first page of app
         navigationController?.popViewController(animated: true)
     }
     
