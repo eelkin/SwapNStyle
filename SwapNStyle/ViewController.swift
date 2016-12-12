@@ -18,19 +18,25 @@ class ViewController: UIViewController {
     var shirts: [String] = []
     var pants: [String] = []
     var shoes: [String] = []
-    // presentation purposes: default photos to fill arrays
+    // array of colors for color pallette
+    let colors: [UIColor] = [UIColor.init(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>),
+                             UIColor.init(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>),
+                             UIColor.init(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>),
+                             UIColor.init(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>),
+                             UIColor.init(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)]
     
     // counter for arrays
     var shirtsI: Int = 0
     var pantsI: Int = 0
     var shoesI: Int = 0
+    var colorsI: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // Sets up image background
-         //self.view.backgroundColor! = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+        self.view.backgroundColor! = colors[colorsI]
         
         // fills up clothing items array if database isn't empty
         if !clothingItems.isEmpty {
@@ -181,14 +187,13 @@ class ViewController: UIViewController {
             shoesImageView.image = loadImage(shoes[shoes.count - 1])
         }
         
-        /*
         // sets background to new color (change to array instead of if statements
-        if self.view.backgroundColor! == UIColor.init(red: 0, green: 0, blue: 0, alpha: 1) {
-            self.view.backgroundColor! = UIColor.init(red: 255, green: 255, blue: 255, alpha: 1)
+        if colorsI < colors.count - 1{
+            shoesI += 1
         } else {
-            self.view.backgroundColor! = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+            shoesI = 0
         }
-        */
+        self.view.backgroundColor! = colors[colorsI]
     }
 
     //loads image from database when swiped
