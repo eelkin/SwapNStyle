@@ -1,5 +1,13 @@
 import XCTest
-import SQLite
+@testable import SQLite
+
+#if SQLITE_SWIFT_STANDALONE
+import sqlite3
+#elseif SQLITE_SWIFT_SQLCIPHER
+import SQLCipher
+#elseif COCOAPODS
+import CSQLite
+#endif
 
 class ConnectionTests : SQLiteTestCase {
 
@@ -43,17 +51,29 @@ class ConnectionTests : SQLiteTestCase {
         XCTAssertTrue(db.readonly)
     }
 
-    func test_lastInsertRowid_returnsNilOnNewConnections() {
-        XCTAssert(db.lastInsertRowid == nil)
+    func test_changes_returnsZeroOnNewConnections() {
+        XCTAssertEqual(0, db.changes)
     }
 
     func test_lastInsertRowid_returnsLastIdAfterInserts() {
         try! InsertUser("alice")
-        XCTAssertEqual(1, db.lastInsertRowid!)
+        XCTAssertEqual(1, db.lastInsertRowid)
     }
 
-    func test_changes_returnsZeroOnNewConnections() {
-        XCTAssertEqual(0, db.changes)
+    func test_lastInsertRowid_doesNotResetAfterError() {
+        XCTAssert(db.lastInsertRowid == 0)
+        try! InsertUser("alice")
+        XCTAssertEqual(1, db.lastInsertRowid)
+        XCTAssertThrowsError(
+            try db.run("INSERT INTO \"users\" (email, age, admin) values ('invalid@example.com', 12, 'invalid')")
+        ) { error in
+            if case SQLite.Result.error(_, let code, _) = error {
+                XCTAssertEqual(SQLITE_CONSTRAINT, code)
+            } else {
+                XCTFail("expected error")
+            }
+        }
+        XCTAssertEqual(1, db.lastInsertRowid)
     }
 
     func test_changes_returnsNumberOfChanges() {
@@ -321,4 +341,44 @@ class ConnectionTests : SQLiteTestCase {
         AssertThrows(try stmt.run())
     }
 
+}
+
+
+class ResultTests : XCTestCase {
+    let connection = try! Connection(.inMemory)
+
+    func test_init_with_ok_code_returns_nil() {
+        XCTAssertNil(Result(errorCode: SQLITE_OK, connection: connection, statement: nil) as Result?)
+    }
+
+    func test_init_with_row_code_returns_nil() {
+        XCTAssertNil(Result(errorCode: SQLITE_ROW, connection: connection, statement: nil) as Result?)
+    }
+
+    func test_init_with_done_code_returns_nil() {
+        XCTAssertNil(Result(errorCode: SQLITE_DONE, connection: connection, statement: nil) as Result?)
+    }
+
+    func test_init_with_other_code_returns_error() {
+        if case .some(.error(let message, let code, let statement)) =
+            Result(errorCode: SQLITE_MISUSE, connection: connection, statement: nil)  {
+            XCTAssertEqual("not an error", message)
+            XCTAssertEqual(SQLITE_MISUSE, code)
+            XCTAssertNil(statement)
+            XCTAssert(self.connection === connection)
+        } else {
+            XCTFail()
+        }
+    }
+
+    func test_description_contains_error_code() {
+        XCTAssertEqual("not an error (code: 21)",
+            Result(errorCode: SQLITE_MISUSE, connection: connection, statement: nil)?.description)
+    }
+
+    func test_description_contains_statement_and_error_code() {
+        let statement = try! Statement(connection, "SELECT 1")
+        XCTAssertEqual("not an error (SELECT 1) (code: 21)",
+            Result(errorCode: SQLITE_MISUSE, connection: connection, statement: statement)?.description)
+    }
 }

@@ -25,7 +25,7 @@ syntax _and_ intent.
  - [Full-text search][] support
  - [Well-documented][See Documentation]
  - Extensively tested
- - Companion project has [SQLCipher support](https://github.com/stephencelis/SQLiteCipher.swift)
+ - SQLCipher support via CocoaPods
  - Active support at [StackOverflow](http://stackoverflow.com/questions/tagged/sqlite.swift), and [Gitter Chat Room](https://gitter.im/stephencelis/SQLite.swift) (_experimental_)
 
 [Full-text search]: Documentation/Index.md#full-text-search
@@ -129,7 +129,7 @@ install SQLite.swift with Carthage:
  2. Update your Cartfile to include the following:
 
     ```
-    github "stephencelis/SQLite.swift" ~> 0.11.0
+    github "stephencelis/SQLite.swift" ~> 0.11.1
     ```
 
  3. Run `carthage update` and [add the appropriate framework][Carthage Usage].
@@ -145,8 +145,9 @@ install SQLite.swift with Carthage:
 [CocoaPods][] is a dependency manager for Cocoa projects. To install
 SQLite.swift with CocoaPods:
 
- 1. Make sure the latest CocoaPods beta is [installed][CocoaPods
-    Installation]. (SQLite.swift requires version 1.0.0.beta.6 or greater.)
+ 1. Verify that your copy of Xcode is installed in the default location (`/Application/Xcode.app`).
+
+ 2. Make sure the latest CocoaPods beta is [installed][CocoaPods Installation]. (SQLite.swift requires version 1.0.0 or greater.)
 
     ``` sh
     # Using the default Ruby install will require you to use sudo when
@@ -154,15 +155,17 @@ SQLite.swift with CocoaPods:
     [sudo] gem install cocoapods
     ```
 
- 2. Update your Podfile to include the following:
+ 3. Update your Podfile to include the following:
 
     ``` ruby
     use_frameworks!
 
-    pod 'SQLite.swift', '~> 0.11.0'
+    target 'YourAppTargetName' do
+        pod 'SQLite.swift', '~> 0.11.1'
+    end
     ```
 
- 3. Run `pod install`.
+ 4. Run `pod install --repo-update`.
 
 [CocoaPods]: https://cocoapods.org
 [CocoaPods Installation]: https://guides.cocoapods.org/using/getting-started.html#getting-started
@@ -183,6 +186,15 @@ To install SQLite.swift as an Xcode sub-project:
  3. Select the appropriate **SQLite.framework** for your platform.
 
  4. **Add**.
+
+Some additional steps are required to install the application on an actual device:
+
+ 5. In the **General** tab, click the **+** button under **Embedded Binaries**.
+
+ 6. Select the appropriate **SQLite.framework** for your platform.
+
+ 7. **Add**.
+
 
 [Frameworkless Targets]: Documentation/Index.md#frameworkless-targets
 [Xcode]: https://developer.apple.com/xcode/downloads/
@@ -223,7 +235,6 @@ file](./LICENSE.txt) for more information.
 
 These projects enhance or use SQLite.swift:
 
- - [SQLiteCipher.swift](https://github.com/stephencelis/SQLiteCipher.swift)
  - [SQLiteMigrationManager.swift](https://github.com/garriguv/SQLiteMigrationManager.swift) (inspired by [FMDBMigrationManager](https://github.com/layerhq/FMDBMigrationManager))
 
 

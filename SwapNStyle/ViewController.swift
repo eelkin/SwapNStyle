@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Sets up image background
-         self.view.backgroundColor! = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+         //self.view.backgroundColor! = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
         
         // fills up clothing items array if database isn't empty
         if !clothingItems.isEmpty {
@@ -181,12 +181,14 @@ class ViewController: UIViewController {
             shoesImageView.image = loadImage(shoes[shoesI])
         }
         
+        /*
         // sets background to new color (change to array instead of if statements
         if self.view.backgroundColor! == UIColor.init(red: 0, green: 0, blue: 0, alpha: 1) {
             self.view.backgroundColor! = UIColor.init(red: 255, green: 255, blue: 255, alpha: 1)
         } else {
             self.view.backgroundColor! = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
         }
+        */
     }
 
     //loads image from database when swiped

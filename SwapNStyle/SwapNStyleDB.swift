@@ -25,7 +25,7 @@ class ItemDB {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         
         do {
-            db = try Connection("\(path)/swapnstyle.sqlite")
+            db = try Connection("\(path)/SwapNStyle.sqlite")
             
             //REMOVE LINE WHEN ACTUALLY RUNNING APP
             try db?.run("DROP TABLE clothes")

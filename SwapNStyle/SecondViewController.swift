@@ -98,7 +98,7 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         } else {
             
             // default photo
-            let rand = Int(arc4random_uniform(4) + 1)
+            let rand = Int(arc4random_uniform(3) + 0)
             
             if clothingItem.itemType == "Shirt" {
                 photoImageView.image = defaultShirts[rand]
