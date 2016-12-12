@@ -44,17 +44,17 @@ class ViewController: UIViewController {
                 }
             }
         }
-        // defaults to first item in each array if it's there
+        // defaults to last item in each array if it's there
         if shirts.count > 0 {
-            shirtImageView.image = loadImage(shirts[0])
+            shirtImageView.image = loadImage(shirts[shirts.count - 1])
             print("shirts: \(shirts[0])")
         }
         if pants.count > 0 {
-            pantsImageView.image = loadImage(pants[0])
+            pantsImageView.image = loadImage(pants[pants.count - 1])
             print("pants: \(pants[0])")
         }
         if shoes.count > 0 {
-            shoesImageView.image = loadImage(shoes[0])
+            shoesImageView.image = loadImage(shoes[pants.count - 1])
             print("shoes: \(shoes[0])")
         }
         
@@ -170,15 +170,15 @@ class ViewController: UIViewController {
             }
         }
         
-        // sets back to indexes
+        // sets to item just added
         if shirts.count > 0 {
-            shirtImageView.image = loadImage(shirts[shirtsI])
+            shirtImageView.image = loadImage(shirts[shirts.count - 1])
         }
         if pants.count > 0 {
-            pantsImageView.image = loadImage(pants[pantsI])
+            pantsImageView.image = loadImage(pants[pants.count - 1])
         }
         if shoes.count > 0 {
-            shoesImageView.image = loadImage(shoes[shoesI])
+            shoesImageView.image = loadImage(shoes[shoes.count - 1])
         }
         
         /*
