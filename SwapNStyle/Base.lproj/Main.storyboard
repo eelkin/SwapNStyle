@@ -27,11 +27,10 @@
                                 <rect key="frame" x="75" y="83" width="225" height="565"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="8Wd-Bd-pzb">
-                                        <rect key="frame" x="0.0" y="0.0" width="225" height="182.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="183"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="8Wd-Bd-pzb" secondAttribute="height" multiplier="225:182" id="OPx-zz-OUY"/>
-                                            <constraint firstAttribute="height" constant="182.5" id="f2t-MV-JVL"/>
+                                            <constraint firstAttribute="height" constant="183" id="CNO-MI-uk5"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="noi-qx-vDh" appends="YES" id="OgS-kf-vEf"/>
@@ -39,11 +38,8 @@
                                         </connections>
                                     </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-J7-Crg" userLabel="Pants Image View">
-                                        <rect key="frame" x="0.0" y="192.5" width="225" height="182.5"/>
+                                        <rect key="frame" x="0.0" y="193" width="225" height="182"/>
                                         <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="ECA-J7-Crg" secondAttribute="height" multiplier="225:182" id="JcV-aM-Zaz"/>
-                                        </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="QAG-me-Znj" appends="YES" id="URj-GM-uEj"/>
                                             <outletCollection property="gestureRecognizers" destination="yCo-st-C8w" appends="YES" id="6FY-NZ-L1J"/>
