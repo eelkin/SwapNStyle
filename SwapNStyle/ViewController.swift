@@ -28,6 +28,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Sets up image background
+         self.view.backgroundColor! = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+        
         // fills up clothing items array if database isn't empty
         if !clothingItems.isEmpty {
             for item in clothingItems {
@@ -144,6 +148,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSecondViewController" {
             let secondViewController = segue.destination as! SecondViewController
+            secondViewController.view.backgroundColor! = self.view.backgroundColor!
         }
     }
     
@@ -176,16 +181,12 @@ class ViewController: UIViewController {
             shoesImageView.image = loadImage(shoes[shoesI])
         }
         
-        //only the best
-        /*
-        if self.view.backgroundColor! == UIColor.red {
-            self.view.backgroundColor! = UIColor.white
-        } else if self.view.backgroundColor! == UIColor.white {
-            self.view.backgroundColor! = UIColor.blue
+        // sets background to new color (change to array instead of if statements
+        if self.view.backgroundColor! == UIColor.init(red: 0, green: 0, blue: 0, alpha: 1) {
+            self.view.backgroundColor! = UIColor.init(red: 255, green: 255, blue: 255, alpha: 1)
         } else {
-            self.view.backgroundColor! = UIColor.red
+            self.view.backgroundColor! = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
         }
-        */
     }
 
     //loads image from database when swiped
