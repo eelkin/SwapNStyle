@@ -20,11 +20,11 @@ class ViewController: UIViewController {
     var shoes: [String] = []
     // array of colors for color pallette
     
-    let colors: [UIColor] = [UIColor.init(red: 165, green: 206, blue: 228, alpha: 1),
-                             UIColor.init(red: 205, green: 185, blue: 246, alpha: 1),
-                             UIColor.init(red: 115, green: 203, blue: 253, alpha: 1),
-                             UIColor.init(red: 132, green: 231, blue: 252, alpha: 1),
-                             UIColor.init(red: 166, green: 249, blue: 207, alpha: 1)]
+    let colors: [UIColor] = [UIColor.init(red: 165/255, green: 206/255, blue: 228/255, alpha: 1),
+                             UIColor.init(red: 205/255, green: 185/255, blue: 246/255, alpha: 1),
+                             UIColor.init(red: 115/255, green: 203/255, blue: 253/255, alpha: 1),
+                             UIColor.init(red: 132/255, green: 231/255, blue: 252/255, alpha: 1),
+                             UIColor.init(red: 166/255, green: 249/255, blue: 207/255, alpha: 1)]
  
     //let colors: [UIColor] = [UIColor.cyan, UIColor.purple, UIColor.magenta]
     
