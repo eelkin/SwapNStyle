@@ -25,8 +25,6 @@ class ViewController: UIViewController {
                              UIColor.init(red: 115/255, green: 203/255, blue: 253/255, alpha: 1),
                              UIColor.init(red: 132/255, green: 231/255, blue: 252/255, alpha: 1),
                              UIColor.init(red: 166/255, green: 249/255, blue: 207/255, alpha: 1)]
- 
-    //let colors: [UIColor] = [UIColor.cyan, UIColor.purple, UIColor.magenta]
     
     // counter for arrays
     var shirtsI: Int = 0

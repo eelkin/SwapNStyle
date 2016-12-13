@@ -27,8 +27,8 @@ class ItemDB {
         do {
             db = try Connection("\(path)/SwapNStyle.sqlite")
             
-            //REMOVE LINE WHEN ACTUALLY RUNNING APP
-            try db?.run("DROP TABLE clothes")
+            //COMMENT OUT LINE WHEN ACTUALLY RUNNING APP
+            //try db?.run("DROP TABLE clothes")
             
             createTable()
         } catch {
