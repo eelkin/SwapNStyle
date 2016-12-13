@@ -19,11 +19,14 @@ class ViewController: UIViewController {
     var pants: [String] = []
     var shoes: [String] = []
     // array of colors for color pallette
+    
     let colors: [UIColor] = [UIColor.init(red: 165, green: 206, blue: 228, alpha: 1),
                              UIColor.init(red: 205, green: 185, blue: 246, alpha: 1),
                              UIColor.init(red: 115, green: 203, blue: 253, alpha: 1),
                              UIColor.init(red: 132, green: 231, blue: 252, alpha: 1),
                              UIColor.init(red: 166, green: 249, blue: 207, alpha: 1)]
+ 
+    //let colors: [UIColor] = [UIColor.cyan, UIColor.purple, UIColor.magenta]
     
     // counter for arrays
     var shirtsI: Int = 0

@@ -158,8 +158,8 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
             print("added to database")
         }
         
-        //goes back to first page of app
-        navigationController?.popViewController(animated: true)
+        //goes back to first page of app (unneeded due to unwind segue)
+        // navigationController?.popViewController(animated: true)
     }
     
 }
