@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="225" height="183"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="183" id="CNO-MI-uk5"/>
+                                            <constraint firstAttribute="width" secondItem="8Wd-Bd-pzb" secondAttribute="height" multiplier="75:61" id="iJw-9V-rhd"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="noi-qx-vDh" appends="YES" id="OgS-kf-vEf"/>
@@ -40,6 +40,9 @@
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-J7-Crg" userLabel="Pants Image View">
                                         <rect key="frame" x="0.0" y="193" width="225" height="182"/>
                                         <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ECA-J7-Crg" secondAttribute="height" multiplier="225:182" id="zXL-5j-TxH"/>
+                                        </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="QAG-me-Znj" appends="YES" id="URj-GM-uEj"/>
                                             <outletCollection property="gestureRecognizers" destination="yCo-st-C8w" appends="YES" id="6FY-NZ-L1J"/>
@@ -49,7 +52,6 @@
                                         <rect key="frame" x="0.0" y="385" width="225" height="180"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="180" id="Fsw-FQ-8uN"/>
                                             <constraint firstAttribute="width" secondItem="iXR-Nm-Iz5" secondAttribute="height" multiplier="5:4" id="SFH-Bu-A3k"/>
                                         </constraints>
                                         <connections>
@@ -62,10 +64,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OAs-Ti-OHS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="5Wt-Zm-m3n"/>
-                            <constraint firstItem="OAs-Ti-OHS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aDE-lO-orp"/>
-                            <constraint firstItem="OAs-Ti-OHS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="59" id="iMQ-Wf-BXx"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OAs-Ti-OHS" secondAttribute="bottom" constant="19" id="k5O-8Z-3VK"/>
+                            <constraint firstItem="OAs-Ti-OHS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A2v-8E-Qqm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OAs-Ti-OHS" secondAttribute="bottom" constant="19" id="DVn-AT-YtS"/>
+                            <constraint firstItem="OAs-Ti-OHS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="muK-uk-C9J"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Swap N' Style" id="PW5-Bk-7yD">
