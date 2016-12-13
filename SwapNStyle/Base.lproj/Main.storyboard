@@ -131,11 +131,11 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-c3-NY5">
                                 <rect key="frame" x="0.0" y="64" width="375" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Ube-JM-SgR"/>
+                                    <constraint firstAttribute="width" secondItem="b3z-c3-NY5" secondAttribute="height" multiplier="15:4" id="E3D-p0-kcX"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igr-Mw-uGe">
-                                <rect key="frame" x="16" y="520" width="343" height="41"/>
+                                <rect key="frame" x="16" y="519.5" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Take Picture"/>
                                 <connections>
@@ -143,7 +143,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9M-iQ-mvF">
-                                <rect key="frame" x="16" y="576" width="343" height="41"/>
+                                <rect key="frame" x="16" y="575.5" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
@@ -152,8 +152,11 @@
                                 </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-K5-0Sr">
-                                <rect key="frame" x="25" y="171" width="325" height="325"/>
+                                <rect key="frame" x="25" y="171" width="325" height="324.5"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dV0-K5-0Sr" secondAttribute="height" multiplier="1:1" id="m1n-fI-Acf"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="8DW-rX-FBv" appends="YES" id="QFb-iD-35j"/>
                                 </connections>
@@ -162,17 +165,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="b9M-iQ-mvF" firstAttribute="leading" secondItem="P6U-11-2Gg" secondAttribute="leadingMargin" id="6qj-9M-DWt"/>
+                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="leading" secondItem="P6U-11-2Gg" secondAttribute="leadingMargin" constant="9" id="720-My-Ht8"/>
+                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="top" secondItem="b3z-c3-NY5" secondAttribute="bottom" constant="7" id="BgC-xK-0m9"/>
                             <constraint firstItem="b3z-c3-NY5" firstAttribute="leading" secondItem="P6U-11-2Gg" secondAttribute="leading" id="Bph-1o-e70"/>
                             <constraint firstItem="Igr-Mw-uGe" firstAttribute="leading" secondItem="P6U-11-2Gg" secondAttribute="leadingMargin" id="FPp-4x-d5W"/>
-                            <constraint firstItem="NGJ-Ln-KGC" firstAttribute="top" secondItem="b9M-iQ-mvF" secondAttribute="bottom" constant="50" id="VAc-Hh-1uw"/>
-                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="centerX" secondItem="Igr-Mw-uGe" secondAttribute="centerX" id="XaE-E6-O2x"/>
                             <constraint firstItem="b3z-c3-NY5" firstAttribute="centerX" secondItem="P6U-11-2Gg" secondAttribute="centerX" id="ZSV-B4-Dlm"/>
-                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="leading" secondItem="P6U-11-2Gg" secondAttribute="leadingMargin" constant="9" id="akd-QB-JDA"/>
                             <constraint firstItem="b9M-iQ-mvF" firstAttribute="top" secondItem="Igr-Mw-uGe" secondAttribute="bottom" constant="15" id="asS-nl-pNb"/>
-                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="centerY" secondItem="P6U-11-2Gg" secondAttribute="centerY" id="fyC-1m-lHq"/>
-                            <constraint firstItem="dV0-K5-0Sr" firstAttribute="top" secondItem="b3z-c3-NY5" secondAttribute="bottom" constant="7" id="hfP-VI-jec"/>
                             <constraint firstAttribute="trailing" secondItem="b3z-c3-NY5" secondAttribute="trailing" id="hhA-23-cKg"/>
                             <constraint firstItem="b3z-c3-NY5" firstAttribute="top" secondItem="Ivs-FU-LZj" secondAttribute="bottom" id="ixN-jy-ruW"/>
+                            <constraint firstItem="Igr-Mw-uGe" firstAttribute="top" secondItem="dV0-K5-0Sr" secondAttribute="bottom" constant="24" id="kMs-Pc-AF9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dV0-K5-0Sr" secondAttribute="trailing" constant="9" id="q6y-18-0Av"/>
                             <constraint firstItem="Igr-Mw-uGe" firstAttribute="trailing" secondItem="P6U-11-2Gg" secondAttribute="trailingMargin" id="yoY-9J-ydJ"/>
                             <constraint firstItem="b9M-iQ-mvF" firstAttribute="trailing" secondItem="P6U-11-2Gg" secondAttribute="trailingMargin" id="z4e-pB-U7T"/>
                         </constraints>
