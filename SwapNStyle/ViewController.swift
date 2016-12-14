@@ -53,15 +53,15 @@ class ViewController: UIViewController {
         }
         // defaults to last item in each array if it's there
         if shirts.count > 0 {
-            shirtImageView.image = loadImage(shirts[shirts.count - 1])
+            shirtImageView.image = loadImage(shirts[0])
             print("shirts: \(shirts[0])")
         }
         if pants.count > 0 {
-            pantsImageView.image = loadImage(pants[pants.count - 1])
+            pantsImageView.image = loadImage(pants[0])
             print("pants: \(pants[0])")
         }
         if shoes.count > 0 {
-            shoesImageView.image = loadImage(shoes[pants.count - 1])
+            shoesImageView.image = loadImage(shoes[0])
             print("shoes: \(shoes[0])")
         }
         
